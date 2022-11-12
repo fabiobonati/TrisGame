@@ -10,3 +10,15 @@ C:\Users\fabio\Desktop\Bonati_Cividini_Tris\Bonati_Cividini_Tris\obj\Debug\Bonat
 C:\Users\fabio\Desktop\Bonati_Cividini_Tris\Bonati_Cividini_Tris\obj\Debug\Bonati_Cividini_Tris.pdb
 C:\Users\fabio\Desktop\Bonati_Cividini_Tris\Bonati_Cividini_Tris\obj\Debug\Bonati_Cividini_Tris.Gioco.resources
 C:\Users\fabio\Desktop\Bonati_Cividini_Tris\Bonati_Cividini_Tris\obj\Debug\Bonati_Cividini_Tris.Form1.resources
+C:\Users\civid\Desktop\TrisGame\Bonati_Cividini_Tris\bin\Debug\Bonati_Cividini_Tris.exe.config
+C:\Users\civid\Desktop\TrisGame\Bonati_Cividini_Tris\bin\Debug\Bonati_Cividini_Tris.exe
+C:\Users\civid\Desktop\TrisGame\Bonati_Cividini_Tris\bin\Debug\Bonati_Cividini_Tris.pdb
+C:\Users\civid\Desktop\TrisGame\Bonati_Cividini_Tris\obj\Debug\Bonati_Cividini_Tris.csproj.AssemblyReference.cache
+C:\Users\civid\Desktop\TrisGame\Bonati_Cividini_Tris\obj\Debug\Bonati_Cividini_Tris.csproj.SuggestedBindingRedirects.cache
+C:\Users\civid\Desktop\TrisGame\Bonati_Cividini_Tris\obj\Debug\Bonati_Cividini_Tris.Form1.resources
+C:\Users\civid\Desktop\TrisGame\Bonati_Cividini_Tris\obj\Debug\Bonati_Cividini_Tris.Gioco.resources
+C:\Users\civid\Desktop\TrisGame\Bonati_Cividini_Tris\obj\Debug\Bonati_Cividini_Tris.Properties.Resources.resources
+C:\Users\civid\Desktop\TrisGame\Bonati_Cividini_Tris\obj\Debug\Bonati_Cividini_Tris.csproj.GenerateResource.cache
+C:\Users\civid\Desktop\TrisGame\Bonati_Cividini_Tris\obj\Debug\Bonati_Cividini_Tris.csproj.CoreCompileInputs.cache
+C:\Users\civid\Desktop\TrisGame\Bonati_Cividini_Tris\obj\Debug\Bonati_Cividini_Tris.exe
+C:\Users\civid\Desktop\TrisGame\Bonati_Cividini_Tris\obj\Debug\Bonati_Cividini_Tris.pdb

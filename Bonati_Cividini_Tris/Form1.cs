@@ -9,51 +9,64 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Net;
+using System.Net.Sockets;
 
 namespace Bonati_Cividini_Tris
 {
     public partial class Form1 : Form
     {
+        private UdpClient client2;
+        IPAddress ipsender;
         public Form1()
         {
             InitializeComponent();
         }
-        public static string ipOspite;
-        private bool MatchIP(string expression)
-        {
-            IPAddress ipOspite;
-            return IPAddress.TryParse(expression, out ipOspite);
-            
-        }
 
         private void btn_start_Click(object sender, EventArgs e)
         {
-            if (MatchIP(tb_IP_ospite.Text) == true)
+            try
             {
-                ipOspite = tb_IP_ospite.Text;
+                ipsender = IPAddress.Parse(tb_IP_ospite.Text);
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("L'IP inserito non e' corretto!");
-                tb_IP_ospite.Text = "";
+                MessageBox.Show(ex.Message);
                 return;
             }
-            Gioco nuovaPartita = new Gioco(false, ipOspite);
+            client2 = new UdpClient();
+            IPEndPoint ep = new IPEndPoint(ipsender, 12000);
+            var hostname = Dns.GetHostName();
+            string myIP = Dns.GetHostByName(hostname).AddressList[0].ToString();
+            byte[] buf = Encoding.ASCII.GetBytes(myIP.ToString());
+            client2.Send(buf, buf.Length, ep);
+            Gioco nuovaPartita = new Gioco(false, ipsender);
             Visible = false;
             if (!nuovaPartita.IsDisposed)
                 nuovaPartita.ShowDialog();
             Visible = true;
+            client2.Close();
         }
 
         private void btn_host_Click(object sender, EventArgs e)
         {
-            Gioco nuovaPartita = new Gioco(true);
-            Visible = false;
-            if (!nuovaPartita.IsDisposed)
-                nuovaPartita.ShowDialog();
-            Visible = true;
+            byte[] buffer;
+            client2 = new UdpClient(12000);
+            IPEndPoint ep = new IPEndPoint(IPAddress.Any, 0);
+            do
+            {
+                buffer = client2.Receive(ref ep);
+            } while (client2.Available < 0);
+            var ipGiocatore2 = IPAddress.Parse(Encoding.ASCII.GetString(buffer));
+            if (ipGiocatore2 != null)
+            {
+                Gioco nuovaPartita = new Gioco(true, ipGiocatore2);
+                Visible = false;
+                if (!nuovaPartita.IsDisposed)
+                    nuovaPartita.ShowDialog();
+                Visible = true;
+            }
+            client2.Close();
         }
 
-       
     }
 }
